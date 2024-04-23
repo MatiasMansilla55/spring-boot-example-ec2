@@ -1,0 +1,34 @@
+name: CICD
+on:
+  push:
+    branches: [deploy-to-EC2]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Build Project
+        run: mvn clean install -DskipTests
+      - name: Login to docker hub
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p {{secrets.DOCKER_PASSWORD}}
+      - name: Build docker image
+        run: docker build -t MatiasMansilla55/spring-boot-example-ec2 .
+      - name: Publish image to docker
+        run: docker push MatiasMansilla55/spring-boot-example-ec2:latest
+  deploy:
+    needs: build
+    runs-on: [aws-ec2]
+    steps:
+      - name: Pull Image from docker hub
+        run: docker pull MatiasMansilla55/spring-boot-example-ec2:latest
+      - name: Delete old container
+        run: docker rm -f springboot-example-container
+      - name: Run docker container
+        run: docker run -d -p 8081:8081 --name springboot-example-container MatiasMansilla55/spring-boot-example-ec2
