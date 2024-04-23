@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Nuevo Turno</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="js/turnos/post.js"></script>
+</head>
+<body>
+<div class="container_nuevoTurno">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="turnosList.html">Administracion de Turnos</a>
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+            <h3>Nuevo Turno</h3>
+            <form id="add_new_turno">
+
+                <div class="form-group">
+                        <label class="control-label" for="fecha">FechaYHora:</label>
+                    <input type="datetime-local" class="form-control" id="fecha"
+                           placeholder="Ingrese la fecha" name="fecha" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="id_paciente">Id de Paciente:</label>
+                    <input type="number" class="form-control" id="id_paciente"
+                           placeholder="Ingrese el id del paciente" name="id_paciente" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="nombre_paciente">Nombre del Paciente:</label>
+                    <input type="text" class="form-control" id="nombre_paciente"
+                           placeholder="Ingrese el nombre del paciente" name="nombre_paciente" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="apellido_paciente">Apellido del Paciente:</label>
+                    <input type="text" class="form-control" id="apellido_paciente"
+                           placeholder="Ingrese el apellido del paciente" name="apellido_paciente" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="dni">dni:</label>
+                    <input type="number" class="form-control" id="dni"
+                           placeholder="Ingrese el dni del paciente" name="dni" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="fechaDeIngreso">Fecha de Ingreso:</label>
+                    <input type="date" class="form-control" id="fechaDeIngreso"
+                           placeholder="Ingrese la fecha de Ingreso del Paciente" name="fechaDeIngreso" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="id_domicilio">id del domicilio:</label>
+                    <input type="number" class="form-control" id="id_domicilio"
+                           placeholder="Ingrese el id del domicilio" name="id_domicilio" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="calle">calle:</label>
+                    <input type="text" class="form-control" id="calle"
+                           placeholder="Ingrese la calle" name="calle" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="numero_calle">numero:</label>
+                    <input type="number" class="form-control" id="numero_calle"
+                           placeholder="Ingrese el numero de la calle" name="numero_calle" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="localidad">localidad:</label>
+                    <input type="text" class="form-control" id="localidad"
+                           placeholder="Ingrese la localidad" name="localidad" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="provincia">provincia:</label>
+                    <input type="text" class="form-control" id="provincia"
+                           placeholder="Ingrese la provincia" name="provincia" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="id_odontologo">Id del odontologo:</label>
+                    <input type="number" class="form-control" id="id_odontologo"
+                           placeholder="Ingrese el id del odontologo" name="id_odontologo" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="matricula">Matricula:</label>
+                    <input type="number" class="form-control" id="matricula"
+                           placeholder="Ingrese la matricula de Odontologo" name="matricula" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="nombre_odontologo">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre_odontologo"
+                           placeholder="Ingrese el nombre del Odontologo" name="nombre_odontologo" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="apellido_odontologo">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido_odontologo"
+                           placeholder="Ingrese el apellido del Odontologo" name="apellido_odontologo" required></input>
+                </div>
+
+
+
+
+
+
+                <button type="submit" class="btn btn-danger" id="btn-add-new-turno">Guardar</button>
+            </form>
+            <div id="response" style="display:none; margin-top:10px">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

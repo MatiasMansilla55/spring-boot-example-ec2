@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-image: url("/assets/pexels-ivan-babydov-7787975.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*mobile*/
+
+.container_index h1{
+    size: 5rem;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.nav-pills{
+    display: flex;
+    justify-content: center;
+}
+.nav-pills .nav-item .nav-link{
+    font-style: italic;
+    margin-top: 1.5rem;
+    background-color:#3498db;
+    color: black ;
+    transition: transform 0.3s ease-in-out;
+  
+}
+.nav-pills .nav-item .nav-link:hover{
+    transform: scale(1.1);
+}
+/* alta pacientes */
+.container_pacienteAlta{
+    margin-left: 2.2rem;
+    margin-right: 2.5rem;
+
+}
+.container_pacienteAlta .col-sm-7{
+    background-image: none;
+    background-color:#e6fffa; 
+    padding:10px; 
+    border-radius:3px"
+}
+
+/* alta odontologos */
+.container_odonotologoAlta{
+  
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+}
+.container_odonotologoAlta .row .col-sm-7{
+    background-image: none;
+    background-color:#e6fffa; 
+    padding:10px; 
+    border-radius:3px"
+}
+
+/*table*/
