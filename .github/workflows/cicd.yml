@@ -27,8 +27,8 @@ jobs:
     runs-on: [aws-ec2]
     steps:
       - name: Pull Image from docker hub
-        run: docker pull matias7132/spring-boot-example-ec2:latest
+        run: sudo docker pull matias7132/spring-boot-example-ec2:latest
       - name: Delete old container
-        run: docker rm -f springboot-example-container
+        run: sudo docker rm -f springboot-example-container
       - name: Run docker container
-        run: docker run -d -p 8081:8081 --name springboot-example-container matias7132/spring-boot-example-ec2
+        run: sudo docker run -d -p 8081:8081 --name springboot-example-container matias7132/spring-boot-example-ec2
