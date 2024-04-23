@@ -19,16 +19,16 @@ jobs:
       - name: Login to docker hub
         run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
       - name: Build docker image
-        run: docker build -t MatiasMansilla55/spring-boot-example-ec2 .
+        run: docker build -t matiasmansilla55/spring-boot-example-ec2 .
       - name: Publish image to docker
-        run: docker push MatiasMansilla55/spring-boot-example-ec2:latest
+        run: docker push matiasmansilla55/spring-boot-example-ec2:latest
   deploy:
     needs: build
     runs-on: [aws-ec2]
     steps:
       - name: Pull Image from docker hub
-        run: docker pull MatiasMansilla55/spring-boot-example-ec2:latest
+        run: docker pull matiasmansilla55/spring-boot-example-ec2:latest
       - name: Delete old container
         run: docker rm -f springboot-example-container
       - name: Run docker container
-        run: docker run -d -p 8081:8081 --name springboot-example-container MatiasMansilla55/spring-boot-example-ec2
+        run: docker run -d -p 8081:8081 --name springboot-example-container matiasmansilla55/spring-boot-example-ec2
